@@ -1,0 +1,159 @@
+
+.search {
+    top: 30px;
+}
+
+
+.btn-primary {
+    
+}
+ul {
+     list-style: none;
+ 
+  padding: 0;
+  margin: 0;
+  background: #fff;
+
+}
+
+ul li {
+  display: block;
+  position: relative;
+  /*float: left; */
+  background: #fff;
+   }
+
+/* This hides the dropdowns */
+
+
+li ul { 
+    display: none; 
+    position: relative;
+    left: 160px;
+    top: -5px;
+         border: 1px solid #eee;
+
+}
+
+ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #000;
+}
+
+ul li a:hover { background: #fff; }
+
+/* Display the dropdown */
+
+
+li:hover > ul {
+  display: block;
+  position: absolute;
+}
+
+li:hover li { float: none; }
+
+li:hover a { background: #fff; }
+
+li:hover li a:hover { background: #fff; }
+
+.dropdown-menu li ul li { border-top: 0; }
+
+/* Displays second level dropdowns to the right of the first level dropdown */
+
+
+ul ul ul {
+  left: 100%;
+  top: 0;
+}
+
+/* Simple clearfix */
+
+
+
+ul:before,
+ul:after {
+  content: " "; /* 1 */
+/*  display: table;  2 */
+}
+
+ul:after { clear: both; }
+
+
+
+
+.item img{
+    margin: auto;
+    
+}
+div.col-sm-12.row.content {
+    margin-bottom: 20px;
+}
+.tree {
+    margin-bottom: 20px;
+    padding: 2%;
+}
+.tree img{
+    max-height: 220px;
+    height: 220px;
+    width: 100%;
+    }
+.details {
+    list-style-type: disc;
+    text-align: left;
+    padding: 0px 95px 0px 95px;
+}
+.details li {
+    margin-bottom: 10px;
+}
+footer {
+     position: fixed;
+    height:30px;
+    background-color:#222;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+        
+    }
+.navbar-inverse .navbar-nav > li > a {
+    color: red;
+margin-bottom: 29px;
+font-size: 2em;
+background-color: #222;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: red;
+margin-bottom: 29px;
+font-size: 2em;
+background-color: #222;
+}
+span.badge {
+    color: blue;
+    font-size: 16px;
+}
+.navbar-inverse .navbar-nav > li > a:visited {
+   color: red;
+margin-bottom: 29px;
+font-size: 2em;
+background-color: #222;
+    border: none;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+
+  color: red;
+margin-bottom: 29px;
+font-size: 2em;
+background-color: #222;
+     border: none;
+}
+#search_btn {
+    position: relative;
+    left: 100%;
+    top: -35px;
+    width: 200px;
+    height: 72%;
+}

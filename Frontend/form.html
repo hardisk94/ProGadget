@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+ <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-body">
+
+        <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">User Details</h4>
+        </div>
+
+
+  
+  <form style="padding: 40px;" name="myform" onsubmit="return validateform()">
+    <div class="form-group">
+      <label for="text">Name:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+        </div></div></div>
+    <script>  
+function validateform(){  
+var name=document.myform.name.value;  
+var email=document.myform.email.value;
+var atposition=email.indexOf("@");  
+var dotposition=email.lastIndexOf(".");     
+  
+if (name==null || name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){  
+  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);   
+  return false;  
+  }  
+}  
+    </script>
+</body>
+</html>
+

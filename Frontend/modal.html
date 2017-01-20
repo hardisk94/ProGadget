@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-body">
+
+        <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Cart Items</h4>
+        </div>
+
+
+
+
+          <table class="table table-bordered" id="bootstrap_git_demo">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Edit</th>
+      
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>samsung j2</td>
+        <td>9999</td>
+        <td><button title="" type="button"
+            class="btn btn-danger remove show_tip"
+            data-original-title="Remove from list">
+            <i class="glyphicon glyphicon-remove"></i>
+          </button></td>
+        
+      </tr>
+
+
+      <script type='text/javascript'>
+$(document).ready(function(){
+$(function () {
+    $("table#bootstrap_git_demo").on("click", ".remove", function () {
+
+        $(this).closest('tr').remove();
+    });
+});
+});
+
+</script>
+
+            <!-- <button title="" type="button"
+            class="btn btn-danger remove show_tip"
+            data-original-title="Remove from list">
+            <i class="fa fa-trash-o"></i>
+          </button>-->
+
+
+      </tbody>
+
+      </table>
+
+      
+    
+      <!-- Modal content-->
+      <!--<div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Cart Items</h4>
+        </div>
+</div>
+
+        <!--<div class="modal-body">
+          <p>Samsung Galaxy J2</p>
+        </div>-->
+        <div class="modal-footer text-centre" >
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><a href="form.html">Buy Now</a></button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+    </div>
+
+</body>
+</html>
+

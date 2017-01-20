@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>GETTING STARTED WITH BRACKETS</title>
+        <meta name="description" content="An interactive getting started guide for Brackets.">
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body >
+      <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="col-xs-3">
+            <a href="progadget-1.html">
+                <img src="logo.png" class="img-rounded" width="150" height="100"/></a>
+        </div>
+          <div class="col-xs-9 search">
+            <div class="input-group">
+      
+      <input id="search" type="text" class="form-control" name="Search" placeholder="search" maxlength="50"  oncopy="return false" onpaste="return false">
+                <button class="btn btn-primary" type="submit" id="search_btn"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+            <ul class="nav navbar-nav navbar-right" style="margin-top: -55px;">
+                <li><a id="cartView" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-shopping-cart" aria-hidden="true"><!--<span class="badge"><span id="noOfProduct" style="color:blue;">0</span></span>--></i></a></li>
+      </ul>
+        </div>
+            </div>
+        </nav>
+    <div class="container-fluid text-center">  
+        <div class="col-sm-12">
+            <div class="col-sm-4" id="pro_img">
+                
+            </div>
+            <div class="col-sm-8" id="pro_name">
+            </div>
+            <div class="col-sm-8">
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star-empty"></span><br>
+        </div>
+        <div class="col-md-8" id="pro_price">
+                
+                <br>
+        </div>
+        <div class="col-md-8" id="pro_detail">
+                <p><span style="color:black"><b>Details</b></span></p>
+                                </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center">  
+        <div class="col-sm-12">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-8">
+                <div class="col-sm-6">
+               
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="add_to_cart">Add to Cart</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-body">
+
+        <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Cart Items</h4>
+        </div>
+
+
+
+
+          <table class="table table-bordered" id="bootstrap_git_demo">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Edit</th>
+      
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td id="cart_pro"></td>
+        <td id="cart_price"></td>
+        <td><button title="" type="button"
+            class="btn btn-danger remove show_tip"
+            data-original-title="Remove from list">
+            <i class="glyphicon glyphicon-remove"></i>
+          </button></td>
+        
+      </tr>
+
+
+      <script type='text/javascript'>
+
+          
+          $(document).ready(function(){
+            $(function () {
+                $("table#bootstrap_git_demo").on("click", ".remove", function () {
+                    $("#noOfProduct").empty();
+                    $("#noOfProduct").append("");
+
+                    $.ajax({
+                url: "http://localhost:8080/cart/deleteProduct",
+                //force to handle it as text
+               dataType: "text",
+                success: function(data) {
+                    console.log(data);
+                 $("#myModal1").modal('hide');
+                 alert(data);   
+                }
+                 });
+
+                    $(this).closest('tr').remove();
+                });
+            });
+          });
+
+</script>
+
+        
+      </tbody>
+
+      </table>
+<div class="modal-footer text-centre" >
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Buy Now</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+    </div>
+
+                </div>
+                  <div class="col-sm-6">
+              
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Buy Now</button>
+</div>
+            </div>
+        </div>
+ <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-body">
+
+        <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">User Details</h4>
+        </div>
+
+
+  
+  <form style="padding: 40px;" name="myform">
+    <div class="form-group">
+      <label for="text">Name:<span style="color:red;">*</span></label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:<span style="color:red;">*</span></label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email">
+    </div>
+
+    <button type="button" class="btn btn-primary" id="buy_now">Submit</button>
+          </form>
+        </div></div></div>
+                </div>
+                      
+                      <!----------SUCCESS MODAL------------------->
+                      
+                      
+              <script>
+$(document).ready(function(){
+                var val = document.URL;
+                var url = val.substr(val.indexOf("id"))  
+                var n=parseInt(url.replace("id"+"=",""));
+    
+    
+        
+$("#search").bind("cut copy paste", function(e){
+   e.preventDefault(); 
+});
+    
+    $.ajax({
+    url: "http://localhost:8081/products/"+n,
+    //force to handle it as text
+    dataType: "text",
+    success: function(data) {
+       
+        //data downloaded so we call parseJSON function 
+        //and pass downloaded data
+        var json = $.parseJSON(data);
+       console.log(json);
+        //now json variable contains data in json format
+        //let's display a few items
+       
+            $("#pro_img").append("<img src=images/" + json.productImageUrl + " class='img-responsive img-thumbnail'  alt='Image' >");
+       
+         $("#pro_name").append("<h1>" + json.productName + "</h1><br><br>");
+        $("#pro_price").append("<p>Price: <span style='color:red'>Rs. " + json.productCost + ".00</span> Inclusive of all taxes</p>");
+        $("#pro_detail").append("<p>" + json.productDesc + "</p><br><br>");
+
+    
+    }
+});
+    $("#buy_now").click(function(){
+        
+                $("#myModal").modal('hide');
+         var emailID=$("#email").val();
+        var user=$("#name").val();  
+//var alphaExp = /^[a-zA-Z]+$/;
+//var atposition=email.indexOf("@");  
+//var dotposition=email.lastIndexOf(".");     
+  
+if (user==null || emailID=="" ){  
+  alert("Name or email can't be blank.");  
+  return false;  
+}
+//        if(user!=user.value.match(alphaExp)){
+//        alert("Name not valid");  
+//  return false;
+//    }
+//    else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=emailID.length){  
+//  alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);   
+//  return false;  
+//  }  
+    if(user!=null && emailID!=null){
+              $("#myModal1").modal('hide');
+              }
+       
+          
+     $.ajax({
+    url: "http://localhost:8082/placeOrder/" + emailID+ "/" + user,
+    //force to handle it as text
+   dataType: "text",
+    success: function(data) {
+        console.log(data);
+     $("#myModal1").modal('hide');
+     alert(data);   
+        document.location.href="progadget-1.html";
+            
+    }
+     });
+        });
+          
+    
+   /////////////////// //CART VIEW /////////////////
+  $("#cartView").click(function(){  
+     $.ajax({
+    url: "http://localhost:8080/cartProducts/",
+    //force to handle it as text
+    dataType: "text",
+    success: function(data) {
+        var json = $.parseJSON(data);
+       console.log(json);
+     $("#cart_pro").empty();
+ $("#cart_price").empty();
+     $("#cart_pro").append(json[0].productName);
+ $("#cart_price").append(json[0].productCost);
+    
+    }
+     });
+});        
+    
+   /////////////////// //ADD TO CART  /////////////////
+  $("#add_to_cart").click(function(){  
+     $.ajax({
+    url: "http://localhost:8080/addNewCartProduct/"+n,
+    //force to handle it as text
+    dataType: "text",
+    success: function(data) {
+       
+        //data downloaded so we call parseJSON function 
+        //and pass downloaded data
+        var json = $.parseJSON(data);
+       console.log(json);
+     $("#cart_pro").empty();
+ $("#cart_price").empty();
+     $("#cart_pro").append(json.productName);
+ $("#cart_price").append(json.productCost);
+        $("#noOfProduct").empty();
+        $("#noOfProduct").append("");
+    
+    }
+     });
+});
+    
+    /////////////////////BUY NOW SEND EMAIL////////////////////
+    
+    
+  $("#search_btn").click(function(){
+    var temp = $("#search").val();  
+      var tem_url = "http://localhost:8081/products/getByName/" + temp;
+      console.log(tem_url);
+  $.ajax({
+    url: tem_url,
+    //force to handle it as text
+    dataType: "text",
+    success: function(data) {
+      //data downloaded so we call parseJSON function 
+        //and pass downloaded data
+        var json = $.parseJSON(data);
+        console.log(json);
+        //now json variable contains data in json format
+        //let's display a few items
+        if(json.length!=0){
+       for (var i=0;i<json.length;++i)
+        {
+            $("#products").empty();
+            
+            $("#products").append("<div class='col-sm-4 tree'><a href='item.html?id=" +json[i].id + "'> <img src='images/" + json[i].productImageUrl + "' alt='Image'></a>" +
+                "<p>" + json[i].productName + "<br>" + json[i].productCost + "</p></div>");
+        }
+        }else{
+              $("#products").empty();
+            $("#products").append("<h4 style='min-height:100px;'>This product is not available!</h4>");
+        }
+        
+    }
+});
+  });
+   
+
+});
+                  
+                  
+  /*function reload()  {  
+     $.ajax({
+    url: "http://localhost:8080/addNewCartProduct/"+n,
+    //force to handle it as text
+    dataType: "text",
+    success: function(data) {
+       
+        //data downloaded so we call parseJSON function 
+        //and pass downloaded data
+        var json = $.parseJSON(data);
+       console.log(json);
+     //$("#cart_pro").empty();
+ //$("#cart_price").empty();
+     $("#cart_pro").append(json.productName);
+ $("#cart_price").append(json.productCost);
+        //$("#noOfProduct").empty();
+        $("#noOfProduct").append("1");
+    
+    }
+     });
+};*/
+                 
+      </script>
+  </div>
+              
+                
+            
+      
+
+    </body>
+</html>
